@@ -233,7 +233,7 @@ To get started, we're going to revisit the application that we created in step 4
 
 >**8a.** Go to main project screen and click on _Applications_ in the left sidebar. You will see the application created in step 4 
 ![Alt-text](./assets/step_8-9.png)
-
+![Alt-text](./assets/step_8-3.png)
 
 >**8b.** Click on the three dots on the top right hand corner and create _New Application_
 >* **Name your application** Here we name it ```User_***:ChatBot-Multi-UseCase```
@@ -252,7 +252,7 @@ Overall, aside for mthe subdomain, settings should look like the below screensho
  Overall, aside for mthe subdomain, settings should look like the below screenshot.
 ![Alt text](./assets/step_8-4.png)
 >**8d.** Once your application is in _Running_ state click on it to open the app UI. 
-
+![Alt text](./assets/step_8-5.png)
 >**8e.** Inside the application UI, expand the section called _Additional Inputs_
 ![Alt-text](./assets/step_8-8.png)
 
