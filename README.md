@@ -233,7 +233,7 @@ To get started, we're going to revisit the application that we created in step 4
 
 >**8a.** Go to main project screen and click on _Applications_ in the left sidebar. You will see the application created in step 4 
 ![Alt-text](./assets/step_8-9.png)
-![Alt-text](./assets/step_8-3.png)
+![Alt-text](./assets/image-click-on-app.png)
 
 >**8b.** Click on the three dots on the top right hand corner and create _New Application_
 >* **Name your application** Here we name it ```User_***:ChatBot-Multi-UseCase```
