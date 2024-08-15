@@ -225,7 +225,7 @@ For the purposes of this exercise, a [Mistral-7B-instruct-v0.1](https://huggingf
 
 :pencil2: CML can host models and expose them via standard API mechanism, with authorization available out-of-the-box. Hosting models internally not only protects enterprise IP, but also allows for application of precise fine-tuning approaches and substantial savings on inference costs over time.
 
-## 8. Launch Final Application with Multi UseCase (Hosted Model & VectorDB, Local Model & Vector DB)
+## 8. Launch Final Application with Multi UseCase.
 
 We are now going to put all the pieces together into a final application that allows for model selection (internal vs external) and a vector DB selection (internal or external). This expemplifies the flexibility of LLM apps built with CML.
 
@@ -236,31 +236,27 @@ To get started, we're going to revisit the application that we created in step 4
 
 
 >**8b.** Click on the three dots on the top right hand corner and create _New Application_
-
->**8c.** Name your application. Here we name it ```User_***:ChatBot-Hosted-Models```
+>* **Name your application** Here we name it ```User_***:ChatBot-Multi-UseCase```
+>* **Provide a Creative subdomain Name** ```User***xxxxx```
+>* **Select:** ```Allow Unauthenticated Access```
+>* **Select Script**:```8_launch_app_final/llm_app_final.py```
+Overall, aside for mthe subdomain, settings should look like the below screenshot.
 ![Alt-text](./assets/step_8-2.png)
 
->**8d.** Provide a creative subdomain name. This has to be unique. Select ```Allow Unauthenticated Access```
-
->**8e.** Select the following path for your application **Script**:
-```8_launch_app_final/llm_app_final.py```
-
->**8f.** Ensure you have selected the right container settings for the application, per below:
+>**8c.** Ensure you have selected the right container settings for the application, per below:
 >* **Editor:** _Jupyter Notebook_
 >* **Kernal:** _Python 3.10_
 >* **Edition:** _Nvidia GPU_
-
->**8g.** For resource profile, select _2 vCPU / 4 GB Memory_. Overall, aside for mthe subdomain, settings should look like the below screenshot.
+>* **For resource profile:** select _2 vCPU / 4 GB Memory_
+>* **Create Application:** Click _Create Application_ at the bottom of the page.
+ Overall, aside for mthe subdomain, settings should look like the below screenshot.
 ![Alt text](./assets/step_8-4.png)
+>**8d.** Once your application is in _Running_ state click on it to open the app UI. 
 
->**8h.** Click _Create Application_ at the bottom of the page.
-
->**8i.** Once your application is in _Running_ state click on it to open the app UI. 
-
->**8j.** Inside the application UI, expand the section called _Additional Inputs_
+>**8e.** Inside the application UI, expand the section called _Additional Inputs_
 ![Alt-text](./assets/step_8-8.png)
 
->**8k.** From here you can see all of the application parameters available. Select the model, vector db, and other parameters you'd like to use for each prompt. Finally, you're ready to start asking questions!
+>**8f.** From here you can see all of the application parameters available. Select the model, vector db, and other parameters you'd like to use for each prompt. Finally, you're ready to start asking questions!
 ![Alt-text](./assets/step_8-10.png)
 
 ## :tada: Congratulations! :tada:
