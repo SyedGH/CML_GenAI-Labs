@@ -46,7 +46,7 @@ In this first section, we'll interact with a model (Anthropic's Claude) via Amaz
 >**1a.** Start a session by clicking _New Session_ in the top right corner. Alternatively you can click on _Sessions_ in the sidebar and click _New Session_ there.
 ![Alt text](./assets/open-session.png)
 
->**1b.** Give you session a name (e.g. "Jupyter Rocks!"). 
+>**1b.** Give you session a name (User_***:ExploringAmazonBedrock). 
 >* For **Editor** select _JupyterLab_ 
 >* For **Kernel** select _Python 3.10_
 >* For **Edition** select _Nvidia GPU_ 
@@ -84,7 +84,7 @@ There are two ways to create a JOB in CML: via the UI or programmatically with [
 >**2c.** Press _New Job_ in the top right corner.
 ![Alt text](./assets/html-scrape-new-job.png)
 
->**2d.** On the next screen, give your job a name.
+>**2d.** On the next screen, give your job a name (User_***:LoadingDatatoPinecone).
 
 >**2e.** Under **Script** browse to ```2_populate_vector_db/pinecone_vectordb_insert.py``` by clicking on the folder icon.
 
@@ -113,7 +113,7 @@ After just over a minute you should see both of your jobs completed successfully
 
 In this exercise you will interact with the knowledge base that has been loaded in a Pinecone vector database in [Exercise 2](#2-scrape-and-ingest-data-and-populate-pinecone-db). 
 
->**3a.** Click on _Sessions_ in the left sidebar. If the session you've created before has expired, click _New Session_ in the top right and follow the steps in **1b**. Otherwise, click on your session to return to it. 
+>**3a.** Click on _Sessions_ in the left sidebar. Click _New Session_ in the top right and name the job (User_***:ExploringPineconeDB). 
 
 >**3b.**  Once Jupyter UI comes up, open file ```3_query_vector_db/pinecone_vectordb_query.ipynb``` by double clicking it.
 ![Interact with Pinecone](./assets/pinecone-notebook.png)
@@ -135,7 +135,7 @@ The exercise will walk you through the steps to deploy the application using the
 
 >**4c.** Press _New Application_ in the middle of the screen.
 
->**4d.** Name your application. Here we name it ```LLM APP```
+>**4d.** Name your application. Here we name it ```User_***:ChatBot-Hosted-Models```
 
 >**4e.** Provide a creative subdomain name. This has to be unique.
 
@@ -179,7 +179,7 @@ We'll continue to explore CML's modularity for hosting LLM applications. We will
 
 You will recall that in [exercise 2](#2-scrape-and-ingest-data-and-populate-pinecone-db) we created a new job using the UI. Now we will create a new job using CML's API. Using the API facilitates a programmatic approach to job creation and execution, offering significant advantages in terms of MLOps and general CI/CD. 
 
->**5a.** Go to the session (started in step 1c). If this session has timed out, start a new session, with the same parameters as step 1c. Once in your session open the following path illustrated below:
+>**5a.** Go to the session> start a new session, with the same parameters as step 1c job name (User_***:ExploringChromaDB). Once in your session open the following path illustrated below:
 
 >**5b.** Navigate to ```5_populate_local_chroma_db``` and open notebook ```create_chroma_job.ipynb```
 ![Populate chroma db using CML API notebook](./assets/populate-chroma.png)
@@ -216,7 +216,7 @@ Many organizations are hesitant to use 3rd party LLM providers, instead opting t
 
 For the purposes of this exercise, a [Mistral-7B-instruct-v0.1](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1) model has already been deployed in a separate, public project in the ML Workspace. You will use this model's endpoint to interact with it similar to how interactions with AWS Bedrock was done.
 
->**7a.** Go to your session, or start a new one if yours timed out.
+>**7a.** Go to your session, or start a new one Job Name: (User_***:LocalMistralModel).
 
 >**7b.** Navigate to ```7_cml_hosted_model``` and open notebook titled ```query_cml_llm_model_api.ipynb```:
 ![CML model notebook](./assets/hosted-model-notebook.png)
@@ -225,7 +225,7 @@ For the purposes of this exercise, a [Mistral-7B-instruct-v0.1](https://huggingf
 
 :pencil2: CML can host models and expose them via standard API mechanism, with authorization available out-of-the-box. Hosting models internally not only protects enterprise IP, but also allows for application of precise fine-tuning approaches and substantial savings on inference costs over time.
 
-## 8. Launch Final Application
+## 8. Launch Final Application with Multi UseCase (Hosted Model & VectorDB, Local Model & Vector DB)
 
 We are now going to put all the pieces together into a final application that allows for model selection (internal vs external) and a vector DB selection (internal or external). This expemplifies the flexibility of LLM apps built with CML.
 
@@ -234,21 +234,33 @@ To get started, we're going to revisit the application that we created in step 4
 >**8a.** Go to main project screen and click on _Applications_ in the left sidebar. You will see the application created in step 4 
 ![Alt-text](./assets/step_8-9.png)
 
->**8b.** Click on the three dots on the top right hand corner and select _Application Details_
-![Alt-text](./assets/step_8-6.png)
 
->**8c.** Select the top section _Settings_. Now you are going to select the new file for the application. Click on the folder icon under the **Script** section. Then select the file path ```8_launch_app_final/llm_app_final.py```
+>**8b.** Click on the three dots on the top right hand corner and create _New Application_
+
+>**8c.** Name your application. Here we name it ```User_***:ChatBot-Hosted-Models```
 ![Alt-text](./assets/step_8-2.png)
 
->**8d.** Click on _Update Application_ at the bottom of the page.
-![Alt-text](./assets/step_8-4.png)
+>**8d.** Provide a creative subdomain name. This has to be unique. Select ```Allow Unauthenticated Access```
 
->**8e.** Once your application is in _Running_ state click on it to open the app UI. 
+>**8e.** Select the following path for your application **Script**:
+```8_launch_app_final/llm_app_final.py```
 
->**8f.** Inside the application UI, expand the section called _Additional Inputs_
+>**8f.** Ensure you have selected the right container settings for the application, per below:
+>* **Editor:** _Jupyter Notebook_
+>* **Kernal:** _Python 3.10_
+>* **Edition:** _Nvidia GPU_
+
+>**8g.** For resource profile, select _2 vCPU / 4 GB Memory_. Overall, aside for mthe subdomain, settings should look like the below screenshot.
+![Alt text](./assets/step_8-4.png)
+
+>**8h.** Click _Create Application_ at the bottom of the page.
+
+>**8i.** Once your application is in _Running_ state click on it to open the app UI. 
+
+>**8j.** Inside the application UI, expand the section called _Additional Inputs_
 ![Alt-text](./assets/step_8-8.png)
 
->**8g.** From here you can see all of the application parameters available. Select the model, vector db, and other parameters you'd like to use for each prompt. Finally, you're ready to start asking questions!
+>**8k.** From here you can see all of the application parameters available. Select the model, vector db, and other parameters you'd like to use for each prompt. Finally, you're ready to start asking questions!
 ![Alt-text](./assets/step_8-10.png)
 
 ## :tada: Congratulations! :tada:
