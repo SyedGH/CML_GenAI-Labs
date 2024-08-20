@@ -231,7 +231,7 @@ We are now going to put all the pieces together into a final application that al
 
 To get started:
 
->**8a.** Click on the three dots on the top right hand corner and create _New Application_
+>**8a.** Click on the Application from the Project and create _New Application_ from the top right hand corner.
 >* **Name your application** Here we name it ```User_***:ChatBot-Multi-UseCase```
 >* **Provide a Creative subdomain Name** ```User***xxxxx```
 >* **Select:** ```Allow Unauthenticated Access```
