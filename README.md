@@ -229,13 +229,9 @@ For the purposes of this exercise, a [Mistral-7B-instruct-v0.1](https://huggingf
 
 We are now going to put all the pieces together into a final application that allows for model selection (internal vs external) and a vector DB selection (internal or external). This expemplifies the flexibility of LLM apps built with CML.
 
-To get started, we're going to revisit the application that we created in step 4. 
+To get started:
 
->**8a.** Go to main project screen and click on _Applications_ in the left sidebar. You will see the application created in step 4 
-![Alt-text](./assets/step_8-9.png)
-![Alt-text](./assets/image-click-on-app.png)
-
->**8b.** Click on the three dots on the top right hand corner and create _New Application_
+>**8a.** Click on the three dots on the top right hand corner and create _New Application_
 >* **Name your application** Here we name it ```User_***:ChatBot-Multi-UseCase```
 >* **Provide a Creative subdomain Name** ```User***xxxxx```
 >* **Select:** ```Allow Unauthenticated Access```
@@ -243,7 +239,7 @@ To get started, we're going to revisit the application that we created in step 4
 Overall, aside for mthe subdomain, settings should look like the below screenshot.
 ![Alt-text](./assets/step_8-2.png)
 
->**8c.** Ensure you have selected the right container settings for the application, per below:
+>**8b.** Ensure you have selected the right container settings for the application, per below:
 >* **Editor:** _Jupyter Notebook_
 >* **Kernal:** _Python 3.10_
 >* **Edition:** _Nvidia GPU_
@@ -251,12 +247,12 @@ Overall, aside for mthe subdomain, settings should look like the below screensho
 >* **Create Application:** Click _Create Application_ at the bottom of the page.
  Overall, aside for mthe subdomain, settings should look like the below screenshot.
 ![Alt text](./assets/step_8-4.png)
->**8d.** Once your application is in _Running_ state click on it to open the app UI. 
+>**8c.** Once your application is in _Running_ state click on it to open the app UI. 
 ![Alt text](./assets/step_8-5.png)
->**8e.** Inside the application UI, expand the section called _Additional Inputs_
+>**8d.** Inside the application UI, expand the section called _Additional Inputs_
 ![Alt-text](./assets/step_8-8.png)
 
->**8f.** From here you can see all of the application parameters available. Select the model, vector db, and other parameters you'd like to use for each prompt. Finally, you're ready to start asking questions!
+>**8e.** From here you can see all of the application parameters available. Select the model, vector db, and other parameters you'd like to use for each prompt. Finally, you're ready to start asking questions!
 ![Alt-text](./assets/step_8-10.png)
 
 ## :tada: Congratulations! :tada:
