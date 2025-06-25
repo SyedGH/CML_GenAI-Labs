@@ -4,7 +4,7 @@ The goal of this hands-on lab is to explore Cloudera Machine Learning (CML) thro
 
 Because the applications of LLMs can be quite broad across industries, it is useful to hone in on a particular use case for the purposes of this lab. 
 
->## **Lab use case:** Software vendors are looking to pilot an LLM-based chat interface to improve employee productivity when reading bulky product documentation. 
+>## **Lab use case:** Building a Private Enterprise Grade AI Chatbot. 
  
 ## Lab Flow
 
